@@ -33,6 +33,8 @@ public class MainActivity extends Activity {
 	private GridView gv;
 	private AlbumAdapter albumAdapter;
 	Context ctx;
+ 	public static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 1;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,7 @@ public class MainActivity extends Activity {
 		ctx = this;
 		ctrl = Controller.getInstance(ctx);
 		gv = (GridView) findViewById(R.id.grid);
+
 		if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) { requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);} }
 
 		
